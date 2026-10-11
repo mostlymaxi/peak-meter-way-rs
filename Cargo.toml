@@ -1,0 +1,21 @@
+[package]
+name = "peak-meter-way"
+version = "0.1.0"
+edition = "2021"
+description = "A low-overhead PipeWire peak meter for waybar"
+license = "MIT"
+
+[[bin]]
+name = "peak-meter-way"
+path = "src/main.rs"
+
+[dependencies]
+pipewire = "0.10"
+libc = "0.2"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
